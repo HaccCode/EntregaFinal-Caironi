@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+.rojo {
+    color: rgb(172, 119, 20)
+}
+
+.categories {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
