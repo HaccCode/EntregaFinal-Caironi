@@ -11,6 +11,7 @@ const Navbar = () => {
         <BtnMenu name={"PS5"} callback={() => console.log('click en PS5')} />
         <BtnMenu name={"XBOX"} callback={() => console.log('click en XBOX')} />
         <BtnMenu name={"NINTENDO"} callback={() => console.log('click en NINTENDO')}/>
+        <BtnMenu></BtnMenu>
       </section>
     </nav>
   );
