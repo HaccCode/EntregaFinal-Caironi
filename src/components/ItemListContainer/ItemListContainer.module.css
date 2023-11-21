@@ -1,0 +1,7 @@
+.tit2{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: rgb(172, 119, 20);
+    size: 70px;
+}
