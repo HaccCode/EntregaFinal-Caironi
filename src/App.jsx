@@ -1,12 +1,12 @@
-import ItemListContainer from "./components/ItemListContainer/ItemListCOntainer";
-import Navbar from "./components/Navbar/Navbar"
-
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import Navbar from "./components/Navbar/Navbar";
+import './App.css'
 
 function App() {
   return (
     <>
       <Navbar />
-      <ItemListContainer greeting={'Elije la realidad a explorar'}/>
+      <ItemListContainer greeting={"Continua tu misión..."} />
     </>
   );
 }
