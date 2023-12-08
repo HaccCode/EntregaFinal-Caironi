@@ -6,8 +6,8 @@ import Logo from "./assets/Logo.png";
 const Navbar = () => {
   return (
     <nav className={classes.container}>
-      <img src={Logo} style={{ width: "100px", height: "100px"}} />
-      <h1 className={classes.title}>Press Start - Gamestore</h1>
+      <img src={Logo} style={{ width: "100px", height: "100 px"}} />
+      <h1 className={classes.title}>PressStart - Gamestore</h1>
       <section className={classes.categories}>
         <BtnMenu name={"PC"} callback={() => console.log('click en PC')} />
         <BtnMenu name={"PS4"} callback={() => console.log('click en PS4')} />
