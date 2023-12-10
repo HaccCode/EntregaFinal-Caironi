@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       });
   }, [productId]);
 
-  return <ItemDetail {...product} />;
+  return <ItemDetail { ...product } />;
 };
 
 export default ItemDetailContainer;
