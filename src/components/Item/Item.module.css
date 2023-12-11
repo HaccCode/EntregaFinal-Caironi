@@ -1,0 +1,11 @@
+.item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    /* border: 2px solid blue; */
+    overflow: hidden;
+    text-align:center;
+    padding: 10px
+}

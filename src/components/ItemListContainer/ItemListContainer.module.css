@@ -1,6 +1,7 @@
 .tit2 {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   color: rgb(172, 119, 20);
   margin-top: 20px;
   font-size: 15px;
