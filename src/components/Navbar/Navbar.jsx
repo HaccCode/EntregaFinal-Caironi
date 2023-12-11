@@ -17,6 +17,7 @@ const Navbar = () => {
         <Link to='/category/ps5'>PS5</Link>
         <Link to='/category/xbox-xs'>XBOX XS </Link>
         <Link to='/category/nintendo-switch'>NINTENDO SWITCH</Link>
+        <Link to='/category/emuladores'>EMULADORES</Link>
         <CartWidget/>
       </section>
       

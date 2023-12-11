@@ -26,7 +26,7 @@ const ItemListContainer = ({ greeting }) => {
     <div className={classes.tit2}>
       <h1>
         {greeting}
-        <strong className={classes.text}>I</strong>
+        <strong className={classes.text}> I</strong>
       </h1>
       <ItemList products={products} />
     </div>

@@ -11,16 +11,18 @@ function App() {
         <Navbar />
         <Routes>
           <Route
-            path='/'
-            element={<ItemListContainer greeting={"Continua tu misión..."} />}
+            path="/"
+            element={<ItemListContainer greeting={"Continua tu misión"} />}
           />
           <Route
-            path='/category/:categoryId'
+            path="/category/:categoryId"
             element={<ItemListContainer greeting={"Productos por Categoría"} />}
           />
 
-          <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-        </Routes>
+          <Route path="/detail/:productId" element={<ItemDetailContainer />} />
+
+          <Route path='*' element={<h1>404 Not Found</h1>} />
+          </Routes>
       </BrowserRouter>
     </>
   );
