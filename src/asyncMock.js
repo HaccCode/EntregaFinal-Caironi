@@ -96,7 +96,7 @@ const products = [
     category: "ps5",
     img: '/public/images/ps5-mk1.png',
     stock: 5,
-    description: "",
+    description: "Entrá en una nueva era liderada por el Dios del Fuego, Liu Kang, en un Mortal Kombat épico. Reviví la historia con guerreros legendarios en modos innovadores online y offline. Dominá un sistema de combate renovado con golpes fatales impactantes y Fatalities creativas. Superá límites en el próximo capítulo de la saga.",
   },
   {
     id: "12",
