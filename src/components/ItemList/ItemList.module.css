@@ -1,7 +1,7 @@
-.itemlist{
+.itemlist {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     /* border: 2px solid red; */
-    
+
 }

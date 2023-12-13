@@ -12,11 +12,12 @@
 
 }
 
-a, a:visited {
+a,
+a:visited {
     color: inherit;
 
 }
 
-.detalle{
+.detalle {
     text-shadow: 0 0 5px rgb(172, 20, 96);
 }

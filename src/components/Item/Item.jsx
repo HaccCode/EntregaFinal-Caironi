@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import classes from './Item.module.css'
+import { Link } from "react-router-dom";
+import classes from "./Item.module.css";
 
 const Item = ({ id, name, price, img }) => {
   return (
@@ -7,7 +7,9 @@ const Item = ({ id, name, price, img }) => {
       <h3>{name}</h3>
       <img src={img} style={{ width: 150 }} />
       <h4>ARS ${price}</h4>
-      <Link to={`/detail/${id}`} className={classes.detalle}>Click aquí para más</Link>
+      <Link to={`/detail/${id}`} className={classes.detalle}>
+        Click aquí para más
+      </Link>
     </div>
   );
 };

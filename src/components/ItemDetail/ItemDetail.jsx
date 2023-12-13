@@ -1,7 +1,15 @@
 import ItemCount from "../ItemCount/ItemCount";
 import classes from "./ItemDetailContainer.module.css";
 
-const ItemDetail = ({ name, category, img, stock, price, format,description }) => {
+const ItemDetail = ({
+  name,
+  category,
+  img,
+  stock,
+  price,
+  format,
+  description,
+}) => {
   return (
     <div className={classes.itemdetail}>
       <div className={classes.pic}>

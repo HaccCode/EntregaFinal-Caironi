@@ -1,4 +1,4 @@
-.itemdetail{
+.itemdetail {
     display: flex;
     justify-content: center;
     margin-top: 25px;
@@ -6,7 +6,7 @@
 
 }
 
-.pic{
+.pic {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,11 +15,11 @@
     width: 600px;
 }
 
-.detail{
+.detail {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items: flex-start;
     /* border: 2px solid green; */
     width: 600px;
-    }
+}
