@@ -1,10 +1,10 @@
-import classes from "../BtnMenu/BtnMenu.module.css";
+import classes from '../CartWidget/CartWidget.module.css'
 import CartImage from "./assets/ShoppingCart.svg";
 
 const CartWidget = () => {
   return (
-    <button className={classes.linkMenu}>
-      <img src={CartImage} style={{ width: "30px", height: "30px" }} />1
+    <button className={classes.cartMenu}>
+      <img src={CartImage} style={{ width: "30px", height: "25px" }} />1
     </button>
   );
 };
