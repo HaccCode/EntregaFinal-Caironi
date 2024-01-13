@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Item from "../Item/Item";
 import classes from "./ItemList.module.css";
 

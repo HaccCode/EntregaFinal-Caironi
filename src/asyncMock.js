@@ -162,7 +162,7 @@ const products = [
     img: "/public/images/xbox-tortugasninja.png",
     stock: 5,
     description:
-      "Con el asalto de Bebop y Rocksteady al Canal 6 para robar dispositivos ultramolones para apoyar el último plan malvado de Krang y Shredder, las tortugas tienen que pelear por una serie de escenarios clásicos de la franquicia. Ayuda al temible cuarteto a aplastar a soldados del Pie, guerreros triceratons y soldados de piedra para enviarlos de vuelta a la Dimensión X.",
+      "Con el asalto de Bebop y Rocksteady al Canal 6, las tortugas tienen que pelear por escenarios clásicos de la franquicia. Ayuda a aplastar a soldados del Pie, guerreros triceratons y soldados de piedra para enviarlos de vuelta a la Dimensión X.",
   },
   {
     id: "16",
