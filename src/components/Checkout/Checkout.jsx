@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebaseConfig";
+import ContactForm from "../ContactForm/ContactForm";
+
 import {
   addDoc,
   getDocs,
@@ -22,12 +24,14 @@ const Checkout = () => {
       setLoading(true);
       const objOrder = {
         buyer: {
-          userData,
+          name: userData.name,
+          email: userData.email,
+          phone: userData.phone,
         },
         items: cart,
         total,
       };
-
+      console.log(objOrder)
       const batch = writeBatch(db);
       const outOfStock = [];
 
@@ -44,9 +48,7 @@ const Checkout = () => {
         const dataDoc = doc.data();
         const stockDb = dataDoc.stock;
 
-        const productAddedToCart = cart.find((prod) => {
-          prod.id === doc.id;
-        });
+        const productAddedToCart = cart.find((prod) => prod.id === doc.id);
         const prodQuantity = productAddedToCart?.quantity;
 
         if (stockDb >= prodQuantity) {
@@ -60,8 +62,9 @@ const Checkout = () => {
         batch.commit();
 
         const orderCollection = collection(db, "orders");
-
         const { id } = await addDoc(orderCollection, objOrder);
+        console.log("Order created successfully. Order ID:", id);
+
         clearCart();
         setOrderId(id);
       } else {
@@ -85,8 +88,7 @@ const Checkout = () => {
   return (
     <>
       <h1>CheckOut</h1>
-      {/* <ContactForm createOrder={createOrder} /> */}
-      <button onClick={createOrder}>Generar Orden</button>
+      <ContactForm createOrder={createOrder} />
     </>
   );
 };
