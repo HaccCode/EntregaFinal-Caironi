@@ -46,19 +46,24 @@ const ItemDetail = ({
         <h3>Formato: {format}</h3>
         <h2>ARS ${price}</h2>
         <p>{description}</p>
-        <div>
-          {!isInCart(id) ? (
-            <ItemCount onAdd={handleOnAdd} stock={stock} />
-          ) : (
-            <Link
-              to="/cart"
-              className={classes.boton}
-              style={{ color: "black", padding: "5px" }}
-            >
-              Finalizar Compra
-            </Link>
-          )}
-        </div>
+        {stock === 0 ? (
+          <p style={{ color: "red" }}>¡Producto sin stock!</p>
+        ) : (
+          <div>
+            {!isInCart(id) ? (
+              <ItemCount onAdd={handleOnAdd} stock={stock} />
+            ) : (
+              <Link
+                to="/cart"
+                className={classes.boton}
+                style={{ color: "black", padding: "5px" }}
+              >
+                Finalizar Compra
+              </Link>
+            )}
+          </div>
+        )}
+    
       </div>
     </div>
   );
