@@ -31,3 +31,15 @@
     margin-right: 5px;
     box-shadow: 0 0 12px rgb(172, 119, 20);
 }
+
+.linkMenu {
+    color: #ac7714;
+    padding: 14px;
+    box-shadow: 0 0 12px rgb(172, 119, 20);
+    border: 4px solid rgb(172, 119, 20);
+    background-color: black;
+    margin: 9px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}

@@ -29,10 +29,10 @@ const ContactForm = ({ createOrder }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'space-around', padding: '10px'}}>
+      <label >
         Nombre:
-        <input
+        <input style={{marginLeft:'10px'}}
           type="text"
           name="name"
           value={userData.name}
