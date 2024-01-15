@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-// import { getProductById } from "../../asyncMock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../services/firebase/firebaseConfig";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ReactLoading from 'react-loading';
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true)
@@ -24,25 +26,29 @@ const ItemDetailContainer = () => {
         setProduct(productAdapted)
       })
       .catch(error => {
+        toast.warning('Ocurrió un problema, reintente en unos momentos', {
+          position: 'bottom-center',
+          autoClose: 3000,
+          theme: 'dark'
+        });
         console.log(error)
       })
       .finally(() => {
         setLoading(false);
       })
 
-    // getProductById(productId)
-    //   .then((response) => {
-    //     setProduct(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+   
   }, [productId]);
 
   
-  if(loading) {
-    return <h1>Loading...</h1>
-    }
+  if (loading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+        <ReactLoading type={'spin'} color={'#ac7714'} height={50} width={50} />
+      </div>
+    );
+  }
 
   return <ItemDetail {...product} />;
 };

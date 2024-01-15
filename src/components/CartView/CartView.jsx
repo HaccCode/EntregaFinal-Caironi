@@ -24,7 +24,10 @@ const CartView = () => {
               <h3>Cantidad:{prod.quantity}</h3>
               <h3>Precio: ${prod.price}</h3>
               <h3>Subtotal: ${prod.quantity * prod.price}</h3>
-              <button className={classes.boton} style={{ color: "black", padding: "5px" }} onClick={() => removeItem(prod.id) }>Eliminar</button>
+              <button className={classes.boton} style={{ color: "black", padding: "5px" }} onClick={() => removeItem(prod.id) }>
+                Eliminar
+                </button>
+              
             </div>
           );
         })}

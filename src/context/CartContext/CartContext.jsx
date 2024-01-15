@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, createContext, useContext } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext({
   cart: [],
@@ -15,7 +17,12 @@ export const CartProvider = ({ children }) => {
     if (!isInCart(productToAdd.id)) {
       setCart((prev) => [...prev, productToAdd]);
     } else {
-      console.error("Producto ya agregado");
+      toast.warning('Producto ya agregado en carrito', {
+        position: 'bottom-center',
+        autoClose: 2000,
+        theme: "dark",
+  
+      });
     }
   };
 
@@ -23,12 +30,15 @@ export const CartProvider = ({ children }) => {
     return cart.some((prod) => prod.id === productId);
   };
 
-  // const getItem = (productId) => { };
-  // agregar getItem al value de CartContext.Provider
-
   const removeItem = (productId) => {
     const cartUpdated = cart.filter((prod) => prod.id !== productId);
     setCart(cartUpdated);
+    toast.error('Producto eliminado del carrito', {
+      position: 'bottom-center',
+      autoClose: 1500,
+      theme: "dark",
+
+    });
   };
 
   const clearCart = () => {

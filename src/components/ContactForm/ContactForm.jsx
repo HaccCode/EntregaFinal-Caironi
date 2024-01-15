@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = ({ createOrder }) => {
   const [userData, setUserData] = useState({
@@ -24,7 +26,13 @@ const ContactForm = ({ createOrder }) => {
       createOrder(userData);
     } else {
       // Muestra un mensaje de error o maneja la validación según tus necesidades
-      alert("Por favor, complete todos los campos requeridos.");
+      toast.warning('Complete Todos los campos', {
+        position: 'bottom-center',
+        autoClose: 2000,
+        theme: "dark",
+  
+      });
+      
     }
   };
 

@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useCart } from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebaseConfig";
 import ContactForm from "../ContactForm/ContactForm";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ReactLoading from 'react-loading';
+
 
 import {
   addDoc,
@@ -69,16 +73,31 @@ const Checkout = () => {
         setOrderId(id);
       } else {
         //notificacon de falta de stock
+        toast.warning('Producto momentaneamente sin Stock', {
+          position: 'bottom-center',
+          autoClose: 3000,
+          theme: 'dark'
+        });
       }
     } catch (error) {
       //notificacion de error generando la orden
+      toast.warning('Ocurrió un problema, reintente en unos momentos', {
+        position: 'bottom-center',
+        autoClose: 3000,
+        theme: 'dark'
+      });
     } finally {
       setLoading(false);
     }
   };
 
   if (loading) {
-    return <h1>Su Orden esta siendo generada...</h1>;
+    return (
+      <div>
+        <h1>Su Orden está siendo generada...</h1>
+        <ReactLoading type={'spin'} color={'#ac7714'} height={50} width={50} />
+      </div>
+    );
   }
 
   if (orderId) {

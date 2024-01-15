@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import ItemCount from "../ItemCount/ItemCount";
 import classes from "./ItemDetail.module.css";
-import { useCart }  from "../../context/CartContext/CartContext";
+import { useCart } from "../../context/CartContext/CartContext";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ItemDetail = ({
   id,
@@ -25,6 +27,11 @@ const ItemDetail = ({
     };
 
     addItem(objProductToAdd);
+    toast.success("Producto agregado al carrito", {
+      position: "bottom-right",
+      autoClose: 2000,
+      theme: "dark",
+    });
     console.log("agregado al carrito:", quantity);
   };
 
