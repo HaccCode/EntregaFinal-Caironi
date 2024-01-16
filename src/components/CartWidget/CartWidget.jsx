@@ -8,7 +8,7 @@ const CartWidget = () => {
   const { totalQuantity } = useCart();
 
   return (
-    <Link to="/cart" className={classes.linkMenu}>
+    <Link to="/cart" className={classes.cartMenu}>
       <img src={CartImage} style={{ width: "30px" }} />
       {totalQuantity}
     </Link>

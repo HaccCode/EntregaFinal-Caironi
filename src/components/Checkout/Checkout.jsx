@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useCart } from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebaseConfig";
 import ContactForm from "../ContactForm/ContactForm";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ReactLoading from 'react-loading';
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReactLoading from "react-loading";
+import classes from "../ItemListContainer/ItemListContainer.module.css";
 
 import {
   addDoc,
@@ -35,7 +35,7 @@ const Checkout = () => {
         items: cart,
         total,
       };
-      console.log(objOrder)
+      console.log(objOrder);
       const batch = writeBatch(db);
       const outOfStock = [];
 
@@ -72,19 +72,17 @@ const Checkout = () => {
         clearCart();
         setOrderId(id);
       } else {
-        //notificacon de falta de stock
-        toast.warning('Producto momentaneamente sin Stock', {
-          position: 'bottom-center',
+        toast.warning("Producto momentaneamente sin Stock", {
+          position: "bottom-center",
           autoClose: 3000,
-          theme: 'dark'
+          theme: "dark",
         });
       }
     } catch (error) {
-      //notificacion de error generando la orden
-      toast.warning('Ocurrió un problema, reintente en unos momentos', {
-        position: 'bottom-center',
+      toast.warning("Ocurrió un problema, reintente en unos momentos", {
+        position: "bottom-center",
         autoClose: 3000,
-        theme: 'dark'
+        theme: "dark",
       });
     } finally {
       setLoading(false);
@@ -93,20 +91,28 @@ const Checkout = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className={classes.tit2}>
         <h1>Su Orden está siendo generada...</h1>
-        <ReactLoading type={'spin'} color={'#ac7714'} height={50} width={50} />
+        <ReactLoading type={"spin"} color={"#ac7714"} height={50} width={50} />
       </div>
     );
   }
 
   if (orderId) {
-    return <h1>El N° ID de su orden es: {orderId}</h1>;
+    return (
+      <div className={classes.tit2}>
+        <h1>El N° ID de su orden es: {orderId}</h1>
+      </div>
+    );
   }
 
   return (
     <>
-      <h1>CheckOut</h1>
+      <div className={classes.tit2}>
+        {" "}
+        <h1>CheckOut</h1>
+      </div>
+
       <ContactForm createOrder={createOrder} />
     </>
   );

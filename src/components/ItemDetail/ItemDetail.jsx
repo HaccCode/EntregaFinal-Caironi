@@ -38,7 +38,7 @@ const ItemDetail = ({
   return (
     <div className={classes.itemdetail}>
       <div className={classes.pic}>
-        <img src={img} style={{ width: 350 }}></img>
+        <img src={img} style={{ width: 360 }}></img>
       </div>
       <div className={classes.detail}>
         <h1>{name}</h1>
@@ -63,7 +63,6 @@ const ItemDetail = ({
             )}
           </div>
         )}
-    
       </div>
     </div>
   );

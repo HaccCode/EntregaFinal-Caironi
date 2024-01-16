@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import classes from "../ItemListContainer/ItemListContainer.module.css";
 
 const ContactForm = ({ createOrder }) => {
   const [userData, setUserData] = useState({
@@ -21,54 +22,85 @@ const ContactForm = ({ createOrder }) => {
     e.preventDefault();
 
     if (userData.name && userData.email && userData.phone) {
-        console.log("Form submitted with data:", userData);
+      console.log("Form submitted with data:", userData);
 
       createOrder(userData);
     } else {
       // Muestra un mensaje de error o maneja la validación según tus necesidades
-      toast.warning('Complete Todos los campos', {
-        position: 'bottom-center',
+      toast.warning("Complete Todos los campos", {
+        position: "bottom-center",
         autoClose: 2000,
         theme: "dark",
-  
       });
-      
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'space-around', padding: '10px'}}>
-      <label >
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        padding: "10px",
+      }}
+    >
+      <label style={{ height: "20px", fontWeight: "bold", fontSize: "18px" }}>
         Nombre:
-        <input style={{marginLeft:'10px'}}
+        <input
+          style={{
+            height: "20px",
+            marginLeft: "10px",
+            backgroundColor: "orange",
+            fontWeight: "bold",
+            fontSize: "15px",
+          }}
           type="text"
           name="name"
+          placeholder="Su Nombre Completo"
           value={userData.name}
           onChange={handleInputChange}
         />
       </label>
       <br />
-      <label>
+      <label style={{ height: "20px", fontWeight: "bold", fontSize: "18px" }}>
         Email:
         <input
+          style={{
+            height: "20px",
+            marginLeft: "10px",
+            backgroundColor: "orange",
+            fontWeight: "bold",
+            fontSize: "15px",
+          }}
           type="email"
           name="email"
+          placeholder="ejemplo@mail.com"
           value={userData.email}
           onChange={handleInputChange}
         />
       </label>
       <br />
-      <label>
+      <label style={{ height: "20px", fontWeight: "bold", fontSize: "18px" }}>
         Teléfono:
         <input
+          style={{
+            height: "20px",
+            marginLeft: "10px",
+            backgroundColor: "orange",
+            fontWeight: "bold",
+            fontSize: "15px",
+          }}
           type="tel"
           name="phone"
+          placeholder="Nro de Contacto"
           value={userData.phone}
           onChange={handleInputChange}
         />
       </label>
       <br />
-      <button type="submit">Generar Orden</button>
+      <button type="submit" className={classes.boton}>
+        Generar Orden
+      </button>
     </form>
   );
 };

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, createContext, useContext } from "react";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext({
   cart: [],
@@ -17,11 +17,10 @@ export const CartProvider = ({ children }) => {
     if (!isInCart(productToAdd.id)) {
       setCart((prev) => [...prev, productToAdd]);
     } else {
-      toast.warning('Producto ya agregado en carrito', {
-        position: 'bottom-center',
+      toast.warning("Producto ya agregado en carrito", {
+        position: "bottom-center",
         autoClose: 2000,
         theme: "dark",
-  
       });
     }
   };
@@ -33,17 +32,16 @@ export const CartProvider = ({ children }) => {
   const removeItem = (productId) => {
     const cartUpdated = cart.filter((prod) => prod.id !== productId);
     setCart(cartUpdated);
-    toast.error('Producto eliminado del carrito', {
-      position: 'bottom-center',
+    toast.error("Producto eliminado del carrito", {
+      position: "bottom-center",
       autoClose: 1500,
       theme: "dark",
-
     });
   };
 
   const clearCart = () => {
-    setCart([])
-  }
+    setCart([]);
+  };
 
   const getTotalQuantity = () => {
     let accu = 0;
@@ -71,7 +69,15 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, isInCart, clearCart, addItem, removeItem, totalQuantity, total }}
+      value={{
+        cart,
+        isInCart,
+        clearCart,
+        addItem,
+        removeItem,
+        totalQuantity,
+        total,
+      }}
     >
       {children}
     </CartContext.Provider>

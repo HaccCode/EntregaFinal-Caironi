@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   color: rgb(172, 119, 20);
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 15px;
   /* border: 2px solid greenyellow; */
 }
@@ -66,4 +66,14 @@
   100% {
     opacity: 1.0;
   }
+}
+
+.boton {
+  color: black;
+  background-color: rgb(172, 119, 20);
+  font-size: 17px;
+  font-weight: bold;
+  margin-right: 5px;
+  box-shadow: 0 0 12px rgb(172, 119, 20);
+  padding: 5px;
 }
