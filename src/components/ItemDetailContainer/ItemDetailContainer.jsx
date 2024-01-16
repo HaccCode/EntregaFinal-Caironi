@@ -6,6 +6,8 @@ import { db } from "../../services/firebase/firebaseConfig";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReactLoading from "react-loading";
+import classes from "../ItemListContainer/ItemListContainer.module.css";
+
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
@@ -40,7 +42,7 @@ const ItemDetailContainer = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className={classes.tit2}>
         <h1>Loading...</h1>
         <ReactLoading type={"spin"} color={"#ac7714"} height={50} width={50} />
       </div>
